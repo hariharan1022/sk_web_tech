@@ -10,7 +10,7 @@ const services = [
   },
   {
     icon: <FaDesktop size={32} />,
-    title: 'Frontend Mastery',
+    title: 'Frontend Development',
     description: 'Interactive user interfaces focused on experience and accessibility.',
     color: 'bg-purple-600',
   },

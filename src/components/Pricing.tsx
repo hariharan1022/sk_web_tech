@@ -10,10 +10,10 @@ const plans = [
     features: [
       '1 Custom High-Performance Page',
       'Advanced Contact Form',
-      'Instant Automatic Confirmation Emails',
+      'Instant Automatic Emails',
       'Full Mobile Optimization',
       'SEO Foundation Included',
-      'Lightning Fast Loading (Speed 95+)'
+      'Lightning Fast Loading'
     ],
     cta: 'Get Started',
     popular: false,
@@ -25,15 +25,31 @@ const plans = [
     description: 'The ultimate professional choice for established businesses needing more depth.',
     features: [
       '3 Bespoke Premium Pages',
-      'Interactive Contact Experience',
+      'Interactive Experience',
       'Custom Automated Workflows',
-      'Mobile-First Responsive Design',
-      'Full SEO & Schema Optimization',
-      'Priority Deployment & Support'
+      'Mobile-First Design',
+      'Full SEO Optimization',
+      'Priority Deployment'
     ],
     cta: 'Get Started',
     popular: true,
     color: 'indigo'
+  },
+  {
+    name: 'Premium Suite',
+    price: '₹9,999',
+    description: 'Full-scale digital ecosystem for brands that demand absolute dominance.',
+    features: [
+      'Unlimited Pages (Up to 10)',
+      'E-commerce / CMS Integration',
+      'Cinematic Motion UI',
+      'Custom Design System',
+      '1 Month Support & Hosting',
+      'Advanced Data Analytics'
+    ],
+    cta: 'Go Premium',
+    popular: false,
+    color: 'purple'
   }
 ];
 
@@ -74,7 +90,7 @@ const Pricing = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}

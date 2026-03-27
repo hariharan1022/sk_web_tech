@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Users, Rocket, ExternalLink, Zap } from 'lucide-react';
+import { GraduationCap, Briefcase, Monitor } from 'lucide-react';
 
 const About = () => {
   const skills = [
@@ -64,7 +64,7 @@ const About = () => {
            viewport={{ once: true }}
            className="space-y-8 bg-slate-50/50 p-10 rounded-[3rem] border border-white"
         >
-          <h3 className="text-3xl font-black font-outfit mb-4 text-slate-900">Technical <span className="text-primary">Mastery</span></h3>
+          <h3 className="text-3xl font-black font-outfit mb-4 text-slate-900">Technical <span className="text-primary">Stack</span></h3>
           <div className="space-y-8">
             {skills.map((skill, index) => (
               <div key={skill.name} className="space-y-3">

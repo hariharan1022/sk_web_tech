@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import project1 from '../assets/img/project/project1.png';
 import project2 from '../assets/img/project/project2.png';
