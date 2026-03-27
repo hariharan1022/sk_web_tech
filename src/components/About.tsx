@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Briefcase, Award, Monitor } from 'lucide-react';
+import { Target, Users, Rocket, ExternalLink, Zap } from 'lucide-react';
 
 const About = () => {
   const skills = [

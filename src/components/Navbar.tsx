@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const Navbar = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
       )}>
         <Link to="/" className="group flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-slate-900 group-hover:bg-primary flex items-center justify-center shadow-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
-              <Code2 className="text-white w-6 h-6" />
+              <Terminal className="text-white w-6 h-6" />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-black font-outfit tracking-tighter text-slate-900 uppercase">
