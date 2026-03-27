@@ -29,11 +29,11 @@ const About = () => {
           </h2>
 
           <p className="text-slate-500 text-xl md:text-2xl leading-relaxed mb-10 font-bold italic border-l-4 border-primary pl-6">
-            "Bridging the gap between ambitious ideas and technical reality through cinematic engineering."
+            "Currently in his 2nd Year of B.Tech IT at Mount Zion College of Engineering and Technology, bridging high-speed code with cinematic design."
           </p>
 
           <p className="text-slate-600 text-lg leading-relaxed mb-12 font-medium">
-            Currently pursuing B.Tech IT at Mount Zion College of Engineering and Technology, I founded 
+            Currently in his 2nd Year of B.Tech IT at Mount Zion College of Engineering and Technology, I founded 
             <span className="text-slate-900 font-black px-2 uppercase">SK Web Technologies</span> to 
             deliver world-class digital solutions. My focus is on high-performance React architectures, 
             premium UI/UX, and scalable backend ecosystems.
@@ -46,7 +46,7 @@ const About = () => {
               </div>
               <div>
                 <h4 className="font-black text-slate-900 text-sm uppercase tracking-widest">Alma Mater</h4>
-                <p className="text-xs font-bold text-slate-400">Mount Zion CET (B.Tech IT)</p>
+                <p className="text-xs font-bold text-slate-400">2nd Year, B.Tech IT</p>
               </div>
             </div>
             <div className="flex items-center gap-6 p-8 glass-card border-slate-100 hover:border-primary/20 transition-all duration-300">

@@ -1,4 +1,5 @@
 import About from '../components/About';
+import Team from '../components/Team';
 import { motion } from 'framer-motion';
 
 const AboutPage = () => {
@@ -8,9 +9,9 @@ const AboutPage = () => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.5 }}
-      className="py-12"
     >
       <About />
+      <Team />
     </motion.div>
   );
 };
