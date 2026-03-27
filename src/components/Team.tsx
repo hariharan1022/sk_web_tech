@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { cn } from '../lib/utils';
 import vishalImg from '../assets/img/team/vishal.png';
 import karthikImg from '../assets/img/team/karthik.png';
 import maheshImg from '../assets/img/team/mahesh.png';
