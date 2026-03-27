@@ -48,13 +48,13 @@ const Team = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-0" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -z-0" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
+      <div className="max-w-[1500px] mx-auto relative z-10 px-8">
+        <div className="text-center mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-100 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-6 shadow-sm"
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-100 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-8 shadow-sm"
           >
             Digital Architects
           </motion.div>
@@ -63,17 +63,17 @@ const Team = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black font-outfit text-slate-900 leading-tight mb-6"
+            className="text-6xl md:text-8xl font-black font-outfit text-slate-900 leading-tight mb-8"
           >
             Expert <span className="text-gradient">Core Team</span>
           </motion.h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
-             A specialized collective of full-stack engineers dedicated to scaling your digital legacy.
+          <p className="text-xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
+             A specialized collective of full-stack engineers dedicated to scaling your digital legacy through cinematic engineering.
           </p>
         </div>
 
-        {/* Compact Grid Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-10">
+        {/* Wider Grid Container */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 lg:gap-14">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
