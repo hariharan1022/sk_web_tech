@@ -61,12 +61,12 @@ const Team = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -z-0" />
 
       <div className="relative z-10">
-        <div className="text-center mb-24 px-8">
+        <div className="text-center mb-16 md:mb-24 px-6 md:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-100 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-8 shadow-sm"
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white border border-slate-100 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-6 md:mb-8 shadow-sm"
           >
             Digital Architects
           </motion.div>
@@ -75,25 +75,25 @@ const Team = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-7xl md:text-9xl font-black font-outfit text-slate-900 leading-tight mb-8"
+            className="text-5xl md:text-9xl font-black font-outfit text-slate-900 leading-[1.1] mb-6 md:mb-8 tracking-tighter"
           >
             Expert <span className="text-gradient">Core Team</span>
           </motion.h2>
-          <p className="text-xl md:text-2xl text-slate-500 max-w-4xl mx-auto font-medium leading-relaxed">
+          <p className="text-lg md:text-2xl text-slate-500 max-w-4xl mx-auto font-medium leading-relaxed">
              A specialized collective of full-stack engineers dedicated to scaling your digital legacy through cinematic engineering.
           </p>
         </div>
 
         {/* Marquee Wrapper */}
-        <div className="relative w-full overflow-hidden py-12">
+        <div className="relative w-full overflow-hidden py-8 md:py-12">
           <motion.div 
-            className="flex gap-16 w-max px-8"
+            className="flex gap-10 md:gap-16 w-max px-6 md:px-8"
             animate={{
-               // (550px width + 64px gap) * 5 members = 3070px
-               x: [-3070, 0] 
+               // Dynamic offset: Approximate values for mobile/desktop loop
+               x: [typeof window !== 'undefined' && window.innerWidth < 768 ? -(300 + 40) * 5 : -3070, 0] 
             }}
             transition={{
-              duration: 60,
+              duration: 50,
               repeat: Infinity,
               ease: "linear",
             }}
@@ -101,11 +101,11 @@ const Team = () => {
             {extendedTeam.map((member, i) => (
               <div
                 key={`${member.name}-${i}`}
-                className="w-[550px] group"
+                className="w-[300px] md:w-[550px] group"
               >
-                <div className="relative overflow-hidden rounded-[5rem] bg-white border border-slate-100 transition-all duration-1000 group-hover:shadow-[0_80px_150px_rgba(0,0,0,0.1)]">
+                <div className="relative overflow-hidden rounded-[3rem] md:rounded-[5rem] bg-white border border-slate-100 transition-all duration-1000 group-hover:shadow-[0_80px_150px_rgba(0,0,0,0.1)]">
                   
-                  {/* Image Container - Taller aspect ratio */}
+                  {/* Image Container */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                      <img 
                        src={member.image} 
@@ -113,16 +113,16 @@ const Team = () => {
                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" 
                      />
                      
-                     {/* Floating Badge - Larger */}
-                     <div className="absolute top-10 right-10 px-6 py-3 bg-white/95 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl">
-                        <span className="text-[12px] font-black uppercase tracking-widest text-primary">Core Architecture</span>
+                     {/* Floating Badge */}
+                     <div className="absolute top-6 right-6 md:top-10 md:right-10 px-4 py-2 md:px-6 md:py-3 bg-white/95 backdrop-blur-2xl border border-white/20 rounded-2xl md:rounded-3xl shadow-2xl">
+                        <span className="text-[10px] md:text-[12px] font-black uppercase tracking-widest text-primary">Core Team</span>
                      </div>
 
-                     {/* Stats Overlay on Hover - More padding */}
-                     <div className="absolute inset-x-0 bottom-0 p-12 translate-y-full group-hover:translate-y-0 transition-all duration-1000 bg-gradient-to-t from-black/90 to-transparent">
-                        <div className="flex flex-wrap gap-3 mt-4">
+                     {/* Stats Overlay on Hover */}
+                     <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 translate-y-full group-hover:translate-y-0 transition-all duration-1000 bg-gradient-to-t from-black/90 to-transparent">
+                        <div className="flex flex-wrap gap-2 md:gap-3 mt-4">
                            {member.skills.map((skill, si) => (
-                             <span key={si} className="text-[11px] font-black uppercase tracking-widest bg-white/20 backdrop-blur-md text-white px-5 py-2.5 rounded-xl border border-white/10">
+                             <span key={si} className="text-[9px] md:text-[11px] font-black uppercase tracking-widest bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg md:rounded-xl border border-white/10">
                                {skill}
                              </span>
                            ))}
@@ -130,27 +130,27 @@ const Team = () => {
                      </div>
                   </div>
 
-                  {/* Info Area - More expansive */}
-                  <div className="p-14 bg-white">
-                     <h4 className="text-5xl font-black font-outfit text-slate-900 mb-3 group-hover:text-primary transition-colors tracking-tighter">
+                  {/* Info Area */}
+                  <div className="p-8 md:p-14 bg-white">
+                     <h4 className="text-3xl md:text-5xl font-black font-outfit text-slate-900 mb-2 md:mb-3 group-hover:text-primary transition-colors tracking-tighter">
                         {member.name}
                      </h4>
-                     <p className="text-[14px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10">
+                     <p className="text-[11px] md:text-[14px] font-black uppercase tracking-[0.3em] text-slate-400 mb-6 md:mb-10">
                         {member.role}
                      </p>
                      
-                     <p className="text-xl text-slate-500 font-medium mb-12 leading-relaxed italic opacity-80 border-l-4 border-slate-100 pl-8">
+                     <p className="text-sm md:text-xl text-slate-500 font-medium mb-8 md:mb-12 leading-relaxed italic opacity-80 border-l-4 border-slate-100 pl-6 md:pl-8">
                         "{member.bio}"
                      </p>
 
-                     {/* Social Buttons - Larger */}
-                     <div className="flex gap-6">
+                     {/* Social Buttons */}
+                     <div className="flex gap-4 md:gap-6">
                         {[
-                          { icon: <Mail size={24} />, link: member.social.mail },
-                          { icon: <FaLinkedin size={24} />, link: member.social.linkedin },
-                          { icon: <FaGithub size={24} />, link: member.social.github }
+                          { icon: <Mail size={typeof window !== 'undefined' && window.innerWidth < 768 ? 18 : 24} />, link: member.social.mail },
+                          { icon: <FaLinkedin size={typeof window !== 'undefined' && window.innerWidth < 768 ? 18 : 24} />, link: member.social.linkedin },
+                          { icon: <FaGithub size={typeof window !== 'undefined' && window.innerWidth < 768 ? 18 : 24} />, link: member.social.github }
                         ].map((s, idx) => (
-                          <a key={idx} href={s.link} className="w-16 h-16 rounded-[2rem] bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all shadow-sm">
+                          <a key={idx} href={s.link} className="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-[2rem] bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all shadow-sm">
                              {s.icon}
                           </a>
                         ))}
@@ -161,9 +161,9 @@ const Team = () => {
             ))}
           </motion.div>
           
-          {/* Gradient Edges - Wider for larger containers */}
-          <div className="absolute inset-y-0 left-0 w-80 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-80 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
+          {/* Gradient Edges */}
+          <div className="absolute inset-y-0 left-0 w-20 md:w-80 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-20 md:w-80 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
         </div>
       </div>
     </section>
