@@ -98,14 +98,14 @@ const Team = () => {
         </div>
 
         {/* Marquee Wrapper */}
-        <div className="relative w-full overflow-hidden py-10 md:py-20">
+        <div className="relative w-full overflow-hidden py-10 md:py-20 flex items-center">
           <motion.div 
-            className="flex gap-8 md:gap-20 w-max px-6 md:px-12"
+            className="flex gap-6 md:gap-12 w-max px-6 md:px-12"
             animate={{
-               // Updated offset for 6 members: 
-               // Mobile: (260px width + 32px gap) * 6 = 1752
-               // Desktop: (600 + 80) * 6 = 4080 (Keeping original for stability)
-               x: [typeof window !== 'undefined' && window.innerWidth < 768 ? -1752 : -3924, 0] 
+               // Dynamic offset for 6 members: 
+               // Mobile: (300px width + 24px gap) * 6 = 1944
+               // Desktop: (450px width + 48px gap) * 6 = 2988
+               x: [typeof window !== 'undefined' && window.innerWidth < 768 ? -1944 : -2988, 0] 
             }}
             transition={{
               duration: 45,
@@ -116,65 +116,63 @@ const Team = () => {
             {extendedTeam.map((member, i) => (
               <motion.div
                 key={`${member.name}-${i}`}
-                className="w-[260px] md:w-[600px] group"
-                whileHover={{ y: -10, rotateY: 3, rotateX: 1 }}
+                className="w-[300px] md:w-[450px] group"
+                whileHover={{ y: -15, rotateY: 4, rotateX: 2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[6rem] bg-white border border-slate-100 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.05)] transition-all duration-700 group-hover:shadow-[0_80px_120px_-30px_rgba(37,99,235,0.1)] group-hover:border-primary/10">
+                <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] bg-white border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] transition-all duration-700 group-hover:shadow-[0_60px_100px_-20px_rgba(37,99,235,0.15)] group-hover:border-primary/20">
                   
                   {/* Top Header Label */}
-                  <div className="absolute top-6 left-6 md:top-12 md:left-12 z-20 hidden md:block">
-                     <div className="flex items-center gap-3 px-5 py-2 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-sm transition-all duration-500 group-hover:bg-primary group-hover:text-white">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[10px] font-black uppercase tracking-widest">Active Engineer</span>
+                  <div className="absolute top-5 left-5 md:top-8 md:left-8 z-20">
+                     <div className="flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-5 md:py-2.5 rounded-xl md:rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 shadow-sm transition-all duration-500 group-hover:bg-primary text-white">
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-400 animate-pulse" />
+                        <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">Active Core</span>
                      </div>
                   </div>
 
-                  {/* Image Container */}
-                  <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden m-3 md:m-6 rounded-[2rem] md:rounded-[5rem]">
-                     <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                  {/* Image Container - Tall, Edge-to-Edge Portrait */}
+                  <div className="relative aspect-[4/5] md:aspect-[3/4] w-full overflow-hidden bg-slate-100">
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-80 group-hover:opacity-60 transition-opacity duration-700" />
                      <img 
                        src={member.image} 
                        alt={member.name} 
-                       className="w-full h-full object-cover transition-all duration-1000 scale-[1.02] group-hover:scale-110" 
+                       className="w-full h-full object-cover transition-transform duration-1000 scale-105 group-hover:scale-110" 
                      />
                      
-                     {/* Role Sticker on Image */}
-                     <div className="absolute bottom-5 left-5 right-5 md:bottom-8 md:left-8 md:right-8 z-20">
-                        <div className="p-4 md:p-8 rounded-[1.5rem] md:rounded-[3rem] bg-white/90 backdrop-blur-3xl border border-white/20 shadow-2xl transition-all duration-700 group-hover:bg-primary group-hover:border-primary/20 group-hover:translate-y-[-5px]">
-                           <h4 className="text-xl md:text-5xl font-black font-outfit text-slate-900 mb-1 md:mb-2 group-hover:text-white transition-colors tracking-tighter">
-                              {member.name}
-                           </h4>
-                           <p className="text-[8px] md:text-[12px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-blue-600 group-hover:text-white/80 transition-colors">
-                              {member.role}
-                           </p>
-                        </div>
+                     {/* Role Sticker directly on the image bottom edge */}
+                     <div className="absolute bottom-5 left-5 right-5 md:bottom-8 md:left-8 md:right-8 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700">
+                        <h4 className="text-3xl md:text-5xl font-black font-outfit text-white mb-1 md:mb-2 tracking-tighter drop-shadow-lg">
+                           {member.name}
+                        </h4>
+                        <p className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-blue-300 drop-shadow-md">
+                           {member.role}
+                        </p>
                      </div>
                   </div>
 
                   {/* Info Area */}
-                  <div className="px-6 pb-8 md:px-16 md:pb-20">
-                     <p className="text-sm md:text-2xl text-slate-400 font-medium mb-6 md:mb-12 leading-relaxed italic border-l-2 md:border-l-4 border-primary/20 pl-4 md:pl-8 group-hover:text-slate-600 transition-colors">
+                  <div className="px-6 py-8 md:px-10 md:py-10 bg-white flex flex-col justify-between h-[200px] md:h-[240px]">
+                     <p className="text-sm md:text-xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-primary/30 pl-4 md:pl-6 group-hover:text-slate-800 transition-colors">
                         "{member.bio}"
                      </p>
 
-                     <div className="flex items-center justify-between">
+                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
                         {/* Skills List */}
-                        <div className="flex flex-wrap gap-1.5 md:gap-3 max-w-[60%]">
+                        <div className="flex flex-wrap gap-1.5 md:gap-2 max-w-[65%]">
                            {member.skills.slice(0, 3).map((skill, si) => (
-                             <span key={si} className="text-[7px] md:text-[10px] font-black uppercase tracking-widest bg-slate-50 text-slate-400 px-3 py-1.5 rounded-lg border border-slate-100 group-hover:bg-blue-50 group-hover:text-primary group-hover:border-primary/10 transition-all">
+                             <span key={si} className="text-[8px] md:text-[10px] font-black uppercase tracking-widest bg-slate-50 text-slate-500 px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl border border-slate-100 group-hover:bg-blue-50 group-hover:text-primary transition-all">
                                {skill}
                              </span>
                            ))}
                         </div>
 
                         {/* Social Buttons */}
-                        <div className="flex gap-3">
+                        <div className="flex gap-2 text-slate-400">
                            {[
-                             { icon: <Mail size={typeof window !== 'undefined' && window.innerWidth < 768 ? 14 : 22} />, link: member.social.mail },
-                             { icon: <FaLinkedin size={typeof window !== 'undefined' && window.innerWidth < 768 ? 14 : 22} />, link: member.social.linkedin }
+                             { icon: <Mail size={typeof window !== 'undefined' && window.innerWidth < 768 ? 16 : 20} />, link: member.social.mail },
+                             { icon: <FaLinkedin size={typeof window !== 'undefined' && window.innerWidth < 768 ? 16 : 20} />, link: member.social.linkedin }
                            ].map((s, idx) => (
-                             <a key={idx} href={s.link} className="w-8 h-8 md:w-16 md:h-16 rounded-lg md:rounded-3xl bg-slate-900 text-white flex items-center justify-center hover:bg-primary hover:scale-110 transition-all shadow-xl">
+                             <a key={idx} href={s.link} className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:-translate-y-1 hover:text-white transition-all shadow-sm hover:shadow-primary/30">
                                 {s.icon}
                              </a>
                            ))}

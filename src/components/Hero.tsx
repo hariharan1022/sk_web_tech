@@ -86,35 +86,35 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Cinematic Stats Matrix */}
+        {/* Cinematic Stats Matrix - Startup Focused */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 w-full max-w-6xl border-t border-slate-100 pt-20">
            <div className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 rounded-3xl bg-blue-50 flex items-center justify-center text-blue-600 mb-1 shadow-inner">
                  <Zap size={24} />
               </div>
-              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">50+</h4>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Global Launches</p>
+              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">10+</h4>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Projects Launched</p>
            </div>
            <div className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 rounded-3xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-1 shadow-inner">
                  <Shield size={24} />
               </div>
               <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">100%</h4>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Secured Core</p>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Quality Code</p>
            </div>
            <div className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 rounded-3xl bg-purple-50 flex items-center justify-center text-purple-600 mb-1 shadow-inner">
                  <Terminal size={24} />
               </div>
-              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">12+</h4>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Countries</p>
+              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">15+</h4>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Tech Stacks</p>
            </div>
            <div className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 rounded-3xl bg-orange-50 flex items-center justify-center text-orange-600 mb-1 shadow-inner">
                  <Sparkles size={24} />
               </div>
-              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">99%</h4>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Happy Clients</p>
+              <h4 className="text-3xl md:text-4xl font-black font-outfit text-slate-900">2x</h4>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Faster Delivery</p>
            </div>
         </div>
       </div>
