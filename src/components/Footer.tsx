@@ -19,36 +19,37 @@ const Footer = () => {
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-          {/* Brand section */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-8 group">
-               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-xl shadow-blue-500/20 group-hover:rotate-12 transition-transform duration-500">
-                  <Code2 className="text-white w-7 h-7" />
-               </div>
-               <div className="flex flex-col leading-tight">
-                <span className="text-2xl font-black font-outfit tracking-tighter text-slate-900 uppercase">
-                    SK <span className="text-primary">WEB</span>
-                </span>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">TECHNOLOGIES</span>
-              </div>
-            </Link>
-            <p className="text-slate-500 text-lg leading-relaxed max-w-sm mb-10 font-medium">
-              Innovating the future, one line of code at a time. High-performance, cinematic web experiences for visionary brands.
-            </p>
-            <div className="flex gap-4">
-               {socialLinks.map((social, i) => (
-                  <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 shadow-xl shadow-slate-100 group">
-                     <social.icon size={20} className="text-slate-400 group-hover:text-white" />
-                  </a>
-               ))}
+        {/* FIRST SECTION: Brand Identity */}
+        <div className="flex flex-col items-center text-center w-full mb-16 border-b border-slate-100 pb-16">
+          <Link to="/" className="flex flex-col items-center gap-4 mb-6 group">
+             <div className="w-14 h-14 rounded-[1.5rem] bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-2xl shadow-blue-500/30 group-hover:rotate-12 transition-transform duration-500">
+                <Code2 className="text-white w-8 h-8" />
+             </div>
+             <div className="flex flex-col leading-none">
+              <span className="text-2xl font-black font-outfit tracking-tighter text-slate-900 uppercase">
+                  SK <span className="text-primary">WEB</span>
+              </span>
+              <span className="text-[9px] font-black tracking-[0.4em] uppercase text-slate-400 mt-2">TECHNOLOGIES</span>
             </div>
+          </Link>
+          <p className="text-slate-500 text-sm leading-relaxed max-w-lg mb-8 font-medium">
+            Innovating the future, one line of code at a time. High-performance, cinematic web experiences for visionary brands.
+          </p>
+          <div className="flex gap-4">
+             {socialLinks.map((social, i) => (
+                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 shadow-xl shadow-slate-100 group">
+                   <social.icon size={16} className="text-slate-400 group-hover:text-white" />
+                </a>
+             ))}
           </div>
+        </div>
 
-          {/* Quick links */}
-          <div>
-            <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-sm">Navigation</h4>
-            <ul className="space-y-5">
+        {/* SECOND SECTION: Links */}
+        <div className="flex flex-row justify-between w-full mb-12 gap-4 md:gap-12">
+          {/* Navigation: Left Side */}
+          <div className="text-left w-1/2">
+            <h4 className="font-black text-slate-900 mb-4 md:mb-6 uppercase tracking-widest text-[10px] md:text-xs">Navigation</h4>
+            <ul className="space-y-3 md:space-y-4">
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About', path: '/about' },
@@ -57,7 +58,7 @@ const Footer = () => {
                 { name: 'Contact', path: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-slate-500 hover:text-primary transition-colors font-bold text-base">
+                  <Link to={link.path} className="text-slate-500 hover:text-primary transition-colors font-bold text-[10px] md:text-xs">
                     {link.name}
                   </Link>
                 </li>
@@ -65,13 +66,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-sm">Solutions</h4>
-            <ul className="space-y-5">
+          {/* Solutions: Right Side */}
+          <div className="text-right w-1/2">
+            <h4 className="font-black text-slate-900 mb-4 md:mb-6 uppercase tracking-widest text-[10px] md:text-xs">Solutions</h4>
+            <ul className="space-y-3 md:space-y-4">
               {['Web App Architecture', 'UI/UX Visual Design', 'Cloud Deployment', 'Bespoke Development', 'Cyber Security'].map((item) => (
                 <li key={item}>
-                  <Link to="/services" className="text-slate-500 hover:text-primary transition-colors font-bold text-base">
+                  <Link to="/services" className="text-slate-500 hover:text-primary transition-colors font-bold text-[10px] md:text-xs">
                     {item}
                   </Link>
                 </li>
@@ -80,17 +81,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-slate-400 font-bold text-sm flex items-center gap-2">
-            © {new Date().getFullYear()} SK WEB TECHNOLOGIES. Crafted with <Heart size={16} className="text-red-500 animate-pulse fill-red-500" /> by <span className="text-slate-900">Hariharan S</span>.
+        {/* THIRD SECTION: Copyright & Button */}
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-slate-400 font-bold text-[10px] md:text-xs flex items-center gap-2">
+            © 2026 SK WEB TECHNOLOGIES. Crafted with <Heart size={14} className="text-red-500 animate-pulse fill-red-500" /> by <span className="text-slate-900">Hariharan S</span>.
           </p>
           
           <button 
              onClick={scrollToTop}
-             className="group flex items-center gap-3 px-8 py-3 rounded-2xl glass hover:bg-slate-50 transition-all duration-300 shadow-xl shadow-slate-100"
+             className="group flex items-center gap-2 px-6 py-2.5 rounded-xl glass hover:bg-slate-50 transition-all duration-300 shadow-xl shadow-slate-100"
           >
-             <span className="text-sm font-black text-slate-600 group-hover:text-primary uppercase tracking-widest">Elevate</span>
-             <ArrowUp size={18} className="text-primary group-hover:-translate-y-2 transition-transform duration-500" />
+             <span className="text-[10px] md:text-xs font-black text-slate-600 group-hover:text-primary uppercase tracking-widest">Elevate</span>
+             <ArrowUp size={14} className="text-primary group-hover:-translate-y-1.5 transition-transform duration-500" />
           </button>
         </div>
       </div>

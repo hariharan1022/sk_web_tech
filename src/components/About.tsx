@@ -7,13 +7,43 @@ const About = () => {
   return (
     <section id="about" className="py-24 md:py-32 px-6 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-        {/* Left Side: Content */}
+        {/* Photo: Now on the Left Side */}
         <motion.div
            initial={{ opacity: 0, x: -50 }}
            whileInView={{ opacity: 1, x: 0 }}
+           transition={{ duration: 1 }}
+           viewport={{ once: true }}
+           className="lg:w-1/2 relative order-1"
+        >
+          <div className="absolute inset-0 bg-primary/20 blur-[150px] rounded-full -z-10 animate-pulse" />
+          <div className="relative group">
+            <div className="absolute inset-0 border-2 border-primary/20 translate-x-6 translate-y-6 rounded-[4rem] -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-700" />
+            <div className="overflow-hidden rounded-[4rem] shadow-2xl shadow-slate-200 border-8 border-white aspect-[4/5] md:aspect-auto">
+               <img 
+                 src={founderImg} 
+                 alt="Hariharan S" 
+                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+               />
+            </div>
+            
+            {/* Status Card Overlay */}
+            <div className="absolute -bottom-10 -right-10 glass-card p-6 border-white shadow-2xl shadow-slate-300 max-w-[200px] hidden md:block">
+               <div className="flex items-center gap-3 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Status</span>
+               </div>
+               <p className="font-black text-slate-900 text-sm">Building Next-Gen Digital Hubs</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Content: Now on the Right Side */}
+        <motion.div
+           initial={{ opacity: 0, x: 50 }}
+           whileInView={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8 }}
            viewport={{ once: true }}
-           className="lg:w-1/2"
+           className="lg:w-1/2 order-2"
         >
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
@@ -71,36 +101,6 @@ const About = () => {
                  {social.icon}
                </a>
              ))}
-          </div>
-        </motion.div>
-
-        {/* Right Side: Image with effects */}
-        <motion.div
-           initial={{ opacity: 0, scale: 0.8 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 1 }}
-           viewport={{ once: true }}
-           className="lg:w-1/2 relative"
-        >
-          <div className="absolute inset-0 bg-primary/20 blur-[150px] rounded-full -z-10 animate-pulse" />
-          <div className="relative group">
-            <div className="absolute inset-0 border-2 border-primary/20 translate-x-6 translate-y-6 rounded-[4rem] -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-700" />
-            <div className="overflow-hidden rounded-[4rem] shadow-2xl shadow-slate-200 border-8 border-white aspect-[4/5] md:aspect-auto">
-               <img 
-                 src={founderImg} 
-                 alt="Hariharan S" 
-                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-               />
-            </div>
-            
-            {/* Status Card Overlay */}
-            <div className="absolute -bottom-10 -left-10 glass-card p-6 border-white shadow-2xl shadow-slate-300 max-w-[200px] hidden md:block">
-               <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Status</span>
-               </div>
-               <p className="font-black text-slate-900 text-sm">Building Next-Gen Digital Hubs</p>
-            </div>
           </div>
         </motion.div>
       </div>
