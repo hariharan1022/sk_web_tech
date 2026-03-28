@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, Zap, Shield, Sparkles, Terminal } from 'lucide-react';
 
 const Hero = () => {
@@ -77,9 +78,9 @@ const Hero = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center gap-8 mb-32"
         >
-          <a href="/contact" className="btn-primary group text-xl px-14 py-7 rounded-[2rem] shadow-[0_30px_80px_rgba(0,0,0,0.1)] hover:shadow-primary/30">
-            Initiate Project <ArrowUpRight size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          <Link to="/get-started" className="btn-primary group text-xl px-14 py-7 rounded-[2rem] shadow-[0_30px_80px_rgba(0,0,0,0.1)] hover:shadow-primary/30">
+            Get Started <ArrowUpRight size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </Link>
           <a href="/portfolio" className="btn-outline group text-xl px-14 py-7 rounded-[2rem]">
             Check Showcase
           </a>

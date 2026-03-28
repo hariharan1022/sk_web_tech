@@ -67,7 +67,7 @@ const Navbar = () => {
           
           <div className="w-[1px] h-8 bg-slate-100 mx-2" />
           
-          <Link to="/contact" className="btn-primary py-4 px-10 text-xs shadow-none hover:shadow-xl">
+          <Link to="/get-started" className="btn-primary py-4 px-10 text-xs shadow-none hover:shadow-xl">
             Let's Collaborate
           </Link>
         </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
               ))}
               <div className="h-[1px] bg-slate-100 w-full my-2" />
               <Link 
-                to="/contact" 
+                to="/get-started" 
                 onClick={() => setIsMenuOpen(false)}
                 className="btn-primary w-full text-center py-6 text-xl"
               >

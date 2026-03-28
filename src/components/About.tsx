@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Mail, Award } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import founderImg from '../assets/img/team/founder.png'; // I'll save it here
+import founderImg from '../assets/img/team/founder.jpeg'; // I'll save it here
 
 const About = () => {
   return (

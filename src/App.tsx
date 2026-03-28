@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
+import ProjectFormPage from './pages/ProjectFormPage';
 
 const AppContent = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const AppContent = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/get-started" element={<ProjectFormPage />} />
         </Routes>
       </AnimatePresence>
     </MainLayout>
