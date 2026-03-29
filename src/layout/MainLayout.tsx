@@ -21,7 +21,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="relative min-h-screen bg-slate-50">
       <LoadingPreloader />
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         {children}
       </main>
       <Footer />

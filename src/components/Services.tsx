@@ -50,11 +50,11 @@ const allServices = [...services, ...services];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-slate-50/20 -z-10" />
       
-      <div className="max-w-7xl mx-auto px-6 mb-20 text-center lg:text-left">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 md:mb-20 text-center lg:text-left">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ const Services = () => {
         >
           Our Expertise
         </motion.div>
-        <h2 className="text-4xl md:text-7xl font-black font-outfit text-slate-900 mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-7xl font-black font-outfit text-slate-900 mb-4 md:mb-6">
           Digital <span className="text-gradient">Solutions</span>
         </h2>
         <p className="text-lg md:text-xl text-slate-500 max-w-2xl font-medium leading-relaxed">
@@ -86,12 +86,12 @@ const Services = () => {
           {allServices.map((service, index) => (
             <div
               key={index}
-              className="inline-block w-[320px] md:w-[400px] shrink-0 glass-card p-10 border-slate-100 bg-slate-50/50 rounded-[3rem] transition-all duration-300"
+              className="inline-block w-[220px] sm:w-[280px] md:w-[400px] shrink-0 glass-card p-6 md:p-10 border-slate-100 bg-slate-50/50 rounded-[2rem] md:rounded-[3rem] transition-all duration-300"
             >
-              <div className={`w-20 h-20 rounded-3xl mb-8 flex items-center justify-center ${service.color} text-white shadow-2xl shadow-slate-200`}>
+              <div className={`w-14 h-14 md:w-20 md:h-20 rounded-2xl md:rounded-3xl mb-5 md:mb-8 flex items-center justify-center ${service.color} text-white shadow-2xl shadow-slate-200`}>
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-black font-outfit text-slate-900 mb-4 whitespace-normal">{service.title}</h3>
+              <h3 className="text-lg md:text-2xl font-black font-outfit text-slate-900 mb-3 md:mb-4 whitespace-normal">{service.title}</h3>
               <p className="text-slate-500 leading-relaxed font-medium whitespace-normal text-base md:text-lg">
                 {service.description}
               </p>

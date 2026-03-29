@@ -28,23 +28,23 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-8 py-8',
-        isScrolled ? 'py-5 px-6' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-3 sm:px-8 py-4 sm:py-8',
+        isScrolled ? 'py-3 sm:py-5 px-3 sm:px-6' : 'bg-transparent'
       )}
     >
       <div className={cn(
-        "max-w-7xl mx-auto flex items-center justify-between transition-all duration-500 rounded-[2.5rem] px-10 py-4",
+        "max-w-7xl mx-auto flex items-center justify-between transition-all duration-500 rounded-[1.5rem] sm:rounded-[2.5rem] px-4 sm:px-10 py-3 sm:py-4",
         isScrolled ? "glass shadow-[0_20px_60px_rgba(0,0,0,0.05)] border-slate-100/50" : "bg-transparent border-transparent"
       )}>
         <Link to="/" className="group flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-slate-900 group-hover:bg-primary flex items-center justify-center shadow-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
-              <Terminal className="text-white w-6 h-6" />
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-900 group-hover:bg-primary flex items-center justify-center shadow-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+              <Terminal className="text-white w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black font-outfit tracking-tighter text-slate-900 uppercase">
+              <span className="text-lg sm:text-2xl font-black font-outfit tracking-tighter text-slate-900 uppercase">
                 SK <span className="text-primary italic">WEB</span>
               </span>
-              <span className="text-[9px] font-black tracking-[0.3em] uppercase text-slate-400">TECHNOLOGIES</span>
+              <span className="hidden sm:block text-[9px] font-black tracking-[0.3em] uppercase text-slate-400">TECHNOLOGIES</span>
             </div>
         </Link>
 

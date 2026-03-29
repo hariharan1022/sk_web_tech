@@ -55,12 +55,12 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 md:py-32 px-6 relative overflow-hidden bg-white">
+    <section id="pricing" className="py-14 md:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden bg-white">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-500/5 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-20 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-7xl font-black font-outfit text-slate-900 mb-6 md:mb-8"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-outfit text-slate-900 mb-4 md:mb-8"
           >
             Choose Your <span className="text-gradient">Growth Path</span>
           </motion.h2>
@@ -90,7 +90,7 @@ const Pricing = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -99,9 +99,9 @@ const Pricing = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
               className={cn(
-                "relative group p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] transition-all duration-500",
+                "relative group p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] transition-all duration-500",
                 plan.popular 
-                  ? "bg-slate-900 text-white shadow-[0_40px_100px_rgba(0,0,0,0.1)] md:scale-105" 
+                  ? "bg-slate-900 text-white shadow-[0_40px_100px_rgba(0,0,0,0.1)] sm:scale-105" 
                   : "bg-white border border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_100px_rgba(0,0,0,0.08)]"
               )}
             >

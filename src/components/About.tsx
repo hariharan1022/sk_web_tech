@@ -5,8 +5,8 @@ import founderImg from '../assets/img/team/founder.jpeg'; // I'll save it here
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 px-6 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+    <section id="about" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-20 items-center">
         {/* Photo: Now on the Left Side */}
         <motion.div
            initial={{ opacity: 0, x: -50 }}
@@ -54,15 +54,15 @@ const About = () => {
             <span className="text-sm uppercase tracking-widest">Founder & Lead Developer</span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-8xl font-black font-outfit mb-10 text-slate-900 leading-[1] tracking-tighter">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black font-outfit mb-6 md:mb-10 text-slate-900 leading-[1] tracking-tighter">
             Hariharan <span className="text-gradient">S</span>
           </h2>
 
-          <p className="text-slate-500 text-xl md:text-2xl leading-relaxed mb-10 font-bold italic border-l-4 border-primary pl-6">
+          <p className="text-slate-500 text-base md:text-xl lg:text-2xl leading-relaxed mb-8 md:mb-10 font-bold italic border-l-4 border-primary pl-4 md:pl-6">
             "Currently in his 2nd Year of B.Tech IT at Mount Zion College of Engineering and Technology, bridging high-speed code with cinematic design."
           </p>
 
-          <p className="text-slate-600 text-lg leading-relaxed mb-12 font-medium">
+          <p className="text-slate-600 text-sm md:text-lg leading-relaxed mb-8 md:mb-12 font-medium">
             Currently in his 2nd Year of B.Tech IT at Mount Zion College of Engineering and Technology, I founded 
             <span className="text-slate-900 font-black px-2 uppercase">SK Web Technologies</span> to 
             deliver world-class digital solutions. My focus is on high-performance React architectures, 
