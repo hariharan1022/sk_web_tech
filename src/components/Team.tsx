@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import vishalImg from '../assets/img/team/vishal.jpeg';
@@ -65,12 +65,12 @@ const team = [
   }
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+    transition: { delay: i * 0.1, duration: 0.7, ease: 'easeOut' }
   })
 };
 
