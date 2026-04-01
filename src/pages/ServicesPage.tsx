@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import {
-  Globe, Monitor, Server, Smartphone, Layers, Palette, Cloud,
+  Globe, Monitor, Server, Smartphone, Palette, Cloud,
   ShoppingCart, Search, Shield, ArrowUpRight, Check, Clock,
-  Zap, Code2, Database, GitBranch, Rocket, MessageSquare, PenLine,
+  Zap, Code2, GitBranch, Rocket, MessageSquare, PenLine,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
@@ -149,9 +149,9 @@ const techStack = [
   { name: 'GitHub Actions', color: '#2088FF' },
 ];
 
-const fadeUp = {
+const fadeUp: any = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] } }),
+  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.7, ease: "easeOut" as any } }),
 };
 
 /* ─── PAGE ────────────────────────────────────────────── */
@@ -179,7 +179,7 @@ const ServicesPage = () => {
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-4xl sm:text-6xl md:text-8xl font-black font-outfit text-slate-900 leading-[0.95] tracking-tighter mb-8">
             Our Digital <span className="text-gradient">Services</span>
           </motion.h1>

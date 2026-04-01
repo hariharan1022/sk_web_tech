@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Briefcase, Mail, Award, Code2 } from 'lucide-react';
+import { GraduationCap, Mail, Award, Code2 } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import founderImg from '../assets/img/team/founder.jpeg';
 

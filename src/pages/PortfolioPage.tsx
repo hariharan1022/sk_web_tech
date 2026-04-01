@@ -1,6 +1,6 @@
 // Cinematic Portfolio Showcase - Last Sync: 2026-04-01
 import { motion } from 'framer-motion';
-import { Sparkles, ExternalLink, ArrowUpRight, Code2, Layout, Zap, Eye, Presentation, Rocket, Smartphone } from 'lucide-react';
+import { Sparkles, ExternalLink, ArrowUpRight, Code2, Layout, Zap, Rocket } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import project1 from '../assets/img/project/project1.png';
