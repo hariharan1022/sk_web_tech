@@ -5,7 +5,7 @@ import { cn } from '../lib/utils';
 const plans = [
   {
     name: 'Landing Page',
-    price: '₹2,999',
+    price: '₹5,999',
     description: 'Perfect for quick professional presence and high-conversion landing pages.',
     features: [
       '1 Custom High-Performance Page',
@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: 'Standard Package',
-    price: '₹5,999',
+    price: '₹9,999',
     description: 'The ultimate professional choice for established businesses needing more depth.',
     features: [
       '3 Bespoke Premium Pages',
@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: 'Premium Suite',
-    price: '₹9,999',
+    price: '₹15,999',
     description: 'Full-scale digital ecosystem for brands that demand absolute dominance.',
     features: [
       'Unlimited Pages (Up to 10)',
